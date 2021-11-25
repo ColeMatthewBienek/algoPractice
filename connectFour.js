@@ -13,6 +13,7 @@ const DIRECTION = Object.freeze({
     L: { r: 0, c: -1 },
     UL: { r: -1, c: -1 }
 });
+
 const ROWS = 6;
 const COLS = 7;
 const WINNING_STREAK = 4;
