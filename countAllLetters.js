@@ -23,3 +23,27 @@ function countAllCharacters(str) {
       return countObj
   }
 
+
+  function getElementsGreaterThan10AtProperty(obj, key) {
+    //create a container for the results
+    let result = [];
+    //if the thing at the provided key is not an array, return an empty array
+      
+      
+      if (!Array.isArray(obj[key])){
+          return [];
+      } else {
+           if (obj[key].length === 0){
+              return [];
+          } else {
+              for (i = 0; i < obj[key].length; i++){
+                  if (obj[key][i] > 10){
+                      result.push(obj[key][i]);
+                  }
+              }
+          }
+        }
+  return result;
+  }
+
+  
