@@ -10,7 +10,7 @@ function digitSum(num) {
     return total
 }   
     
-function sumDigits (num) {
+function sumDigits(num) {
     let total = digitSum(num);
     let isNegative = (num < 0) ? true : false;
     let unsignedNum = Math.abs(num);
