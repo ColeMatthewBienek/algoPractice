@@ -11,5 +11,5 @@ function chunkArrayInGroups(arr, size) {
    return myArr  
 }
   
-chunkArrayInGroups(["a", "b", "c", "d"], 2));
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
 

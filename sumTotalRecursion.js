@@ -27,3 +27,5 @@ function sumDigits (num) {
 
 
 console.log(sumDigits(-22776));
+console.log(12345 % 10)
+
