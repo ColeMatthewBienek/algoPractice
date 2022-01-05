@@ -13,14 +13,14 @@ let testName = 'Splits string into an array of characters';
 function assertArraysEqual(actual, expected, testName) {
     let arraysMatch = true;
     for (i = 0; i < expected.length; i++){
-        for (j = 0; j < actual.length; j++){
+       
             console.log(expected[i], actual [i])
             if (expected[i] !== actual[i]){
                 
                 arraysMatch = false
                 break
             }
-        }
+        
     }
     console.log('am',arraysMatch)
     let arrayLengthMatches = (actual.length === expected.length) ? true : false;
