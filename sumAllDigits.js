@@ -43,13 +43,13 @@
 //     return result;
 // }
 
-function digitSum(num) {
-    let isNegative = (num < 0) ? true : false;
+function sumDigits(num) {
+    
     const unsignedNum = Math.abs(num)
    
     if (unsignedNum > 9) {
       let onesDigit = unsignedNum % 10
-      let remainder = Math.floor(num / 10)
+      let remainder = Math.floor(unsignedNum / 10)
       return onesDigit + sumDigits(remainder)
     } else {
       return num
@@ -57,19 +57,19 @@ function digitSum(num) {
     return total
 }   
     
-function sumDigits (num) {
-    let total = digitSum(num);
+// function sumDigits (num) {
+//     let total = digitSum(num);
     
-    let isNegative = (num < 0) ? true : false;
-    let stringNum = num.toString();
-    let firstNum = Number(stringNum[0]);
-    if (isNegative) {
-        total = total - (firstNum * 2)
-        return total;
-    } else {
-        return total;
-    }
-}
+//     let isNegative = (num < 0) ? true : false;
+//     let stringNum = num.toString();
+//     let firstNum = Number(stringNum[0]);
+//     if (isNegative) {
+//         total = total - (firstNum * 2)
+//         return total;
+//     } else {
+//         return total;
+//     }
+// }
 
 
 
