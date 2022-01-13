@@ -6,7 +6,7 @@ Notes:
 var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
 console.log(output); // --> 'word'
 */
-let assortment = ['allow', 4, 'oops', 'foo', 'bar', 'o']
+let assortment = ['allow', 4, 'oops', 'foo', 'bar', 'o', 'kracken']
 function getLongestWordOfMixedElements (input) {
     //if the array ius empty, return an empty string
     if (input.length < 1) {
@@ -19,7 +19,7 @@ function getLongestWordOfMixedElements (input) {
         return "";
     }
     //iterate, using reduce, and return the longest word in the array of strings
-    return filterForWords.reduce((previous, current) => current.length < previous.length ? current : previous);
+    return filterForWords.reduce((previous, current) => current.length > previous.length ? current : previous);
 }
 
 console.log(getLongestWordOfMixedElements(assortment));
