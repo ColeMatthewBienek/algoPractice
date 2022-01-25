@@ -1,3 +1,87 @@
+
+
+// function solution(str, ending){
+//     //measure the length of the ending string and compare to the end of str
+//      let endingStringLength = ending.length * (-1);
+//      let strEnd = str.substr(endingStringLength);
+//      //if they match, return true
+//      return (strEnd === ending);
+//      //else return false
+//    }
+
+//    console.log(solution('hello', 'olo'));
+
+
+//Remove all values from list a, which are present in list b keeping their order.
+//arrayDiff([1,2,2,2,3],[2]) == [1,3]
+// let array_a =[1,2,2];
+// let array_b =[2];
+
+// // function removeFromArray(array, removeValue){
+// //     return array.filter((ele) => ele !== removeValue );
+// // }
+
+// function arrayDiff (array_a, array_b) {
+//     //if the second array is empty, return array_a unchanged
+//     if (array_b.length < 1){
+//         return array_a;
+//     }
+
+//     //look in array_a and check if any elements from array_b are present
+//         //iterate through bothe arrays--use array_b as the outer array
+//         for (i = 0; i < array_b.length; i++ ){
+//             for (j = 0; j < array_a.length; j++){
+//                 //compare each of the inner array elements against the outer elements
+//                 if (array_b[i] == array_a[j]){
+//                     //splice out matches from array_a
+//                     array_a.splice(j, 1);
+//                     i--;
+//                 }
+//             }
+//         }
+//     //return array_a
+//         return array_a;
+// }
+
+// function arrayDiff (a,b){
+//     return a.filter((ele) => !b.includes(ele));
+// }
+
+// console.log(arrayDiff(array_a, array_b))
+
+// function validatePIN(pin){
+//     //length check
+//     let isNotCorrectLength = (pin.length !== 4 || pin.length !== 6);
+//     if (isNotCorrectLength){        
+//         return false;
+//   } 
+  
+//     let numPIN = Number(pin);
+//     if (!Number(numPIN)){
+//        return false;
+//    }
+   
+//    //check for negative integers
+//    if (numPIN< 1){
+//        return false;
+//    }
+
+//    let isDecimal = (numPIN - Math.floor(numPIN) !== 0);
+//    if (isDecimal){
+//        return false;
+//    }
+
+//    return true;
+
+// }
+// /[0-9]{6}|[0-9]{4}/
+
+// function validatePIN(pin){
+//     return /^(\d{6}|\d{4})$/.test(pin);
+
+// }
+// console.log(validatePIN('12345'))
+
 // var input = [
 //     [
 //         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
@@ -7,181 +91,80 @@
 //     ]
 // ];
 
-// function transformEmployeeData(employeeData) {
-//     let formattedData = [];
-
-//     for(let employee of employeeData) {
-//         let employeeObj = {};
-
-//         for(let field of employee) {
-//             let [key, value] = field;
-//             employeeObj[key] = value;
-//         }
-
-//         formattedData.push(employeeObj);
-//     }
-
-//     return formattedData;
-// }
-
 
 // function transformEmployeeData(employeeData) {
-//     //employeeData[0] ===    ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
-//       //employeeData[0][0]===  ['firstName', 'Joe']
-//        //employeeData[0][0][0]==='firstName'
-//        let employee = {};
-//        let result = [];
-//        //build the object
-//        //iterate over the employees
-//       for (i = 0; i < employeeData.length; i++) {
-//           console.log('---------------------- employee')
-//         //iterate over the specific employee data
-//         for (j = 0; j < employeeData[i].length; j++){
-//             let key = employeeData[i][j][0];
-//             let value = employeeData[i][j][1];
-//             employee[key] = value
-//         }
-//         //push the employee into the result array 
-//         result.push(employee);
-//         //reset the employee 
-//         employee = {};
-        
-//       }
-     
-//     return result;
-//   }
-
-//  console.log(transformEmployeeData(input))
-
-// // var input = {
-// //     name: 'Holly',
-// //     age: 35,
-// //     role: 'producer'
-// //   };
-
-// // function convertObjectToArray(obj) {
-// //     let result = [];
-// //     let tempArray = [];
-// //     for (let key in obj) {
-// //         tempArray.push(key, obj[key])
-// //         console.log(tempArray)
-// //         result.push(tempArray)
-// //         tempArray = []
-      
-// //     }
-// //     return result;
-// //   }
-
-// //   console.log(convertObjectToArray(input))
-// arr = [2, 8, 10, 2];
-
-// function getLargestElement(arr) {
-//     let reducer = ((prev, curr) => (curr > prev) ? curr : prev);
-// //    if (arr.length < 1){
-// //        return 0;
-// //    } else {
-// //        return arr.reduce(reducer);
-// //    }
-//     return arr.length < 1 ? 0 : arr.reduce(reducer);
-// }
+//     //declare a new array to hold objects I will build
+//     let employees = [];
     
-//  console.log(getLargestElement(arr))
-
-
-// function getProductOfAllElementsAtProperty(obj, key) {
-//     // let array = obj[key];
-//     //if there is no propery at the location, or if the property at the key is not an array, return 0
-//     if (!Array.isArray(array)) {
-//         return 0;
-//     } else {
-//        if (array.length < 1){
-// //             return 0;
-// //         } else {
-// //         return array.reduce((prev, curr) => prev * curr);
-// //         }
-// //     }
-// // }
-// let num = 1234;
-// function sumSomeDigits(number) {
-
-// let  absNumber = Math.abs(number);
-//   if (absNumber > 9){
-//     let ones = absNumber %10;
-//     let whatRemains = Math.floor(absNumber /10);
-//     return ones + sumSomeDigits(whatRemains);
-//   } else {
-//       return absNumber;
+//     //iterate through the outer array
+//     for (let employee in employeeData){    
+//     //declare an object to hold the values
+//     let employeeDetails = {};
+//       //select inner arrays
+//       for (i = 0; i < employeeData[employee].length; i++){
+//           //iterate through the inner arrays and assign 
+//           //indices 0 and 1 to key/value pairs
+//           let detailKey = employeeData[employee][i][0];
+//           let detailValue = employeeData[employee][i][1];
+//           employeeDetails[detailKey] = detailValue;
+//           //push the complete object into the new array 
+          
+//       }    
+//       employees.push(employeeDetails);
+//     }
+//     //return the new array 
+//     return employees;
 //   }
-// }
 
-// function sumDigits(number){
-//     let isNegative = (number <0);
-//     let total = Math.abs(sumSomeDigits(number));
-//     let absNumber = Math.abs(number)
-//     if (isNegative ){
-//         let stringNum = absNumber.toString();
-//         let firstDigit = Number(stringNum[0]);
-//         total = total - (firstDigit * 2);
-//         return total
-//     } else {
-//         return total;
-//     }
-// }
+//   console.log(transformEmployeeData(input));
 
-// // //
-// let actual = sumDigits(1234);
-// let expected = 10;
-// let testName = `should add the digits`
-// let actuallNegNum = sumDigits(-342);
-// let expectedNegNum = 3;
-// let testNameNegNum = `should add digits when the first digit is a negative number`
-// // //
-// function assertEqual(actual, expected, testName){
-//    if (actual !== expected){       console.log(`Failed, ${testNameNegNum}, expected ${expectedNegNum}, but received ${actuallNegNum}`)
-//     } else {
-//     console.log(`passed! ${testNameNegNum}`)
-//    }
-//  }
+// function convertObjectToArray(obj) {
+//     //declare an array to hold the converted object
+//     let convertedArray = [];
+//     //iterate through the object (for...in (?))
+//     for (key in obj){
+//       //declare a temporary array to hold values to push into the main array
+//       let tempArray = [];
+//       //pull out the objects key/val pairs
+//       //add them to the temp array
+//       tempArray.push(key, obj[key]);
+//       //push the temp array into the main array
+//       convertedArray.push(tempArray);
+      
+      
+      
+//     } 
+//     //return the array    
+//   }
 
-// //
-// assertEqual(actual, expected, testName);
-// assertEqual(actuallNegNum, expectedNegNum, testNameNegNum);'
-
-let arr = [1,'a', 10, 8, 'zee', 11]
-
-function findSmallestNumberAmongMixedElements(arr) {
-    //test if the array is empty, if it is, return 0;
-    if (arr.length < 1){
-        return 0;
+var customerData = {
+    'Joe': {
+      visits: 1
+    },
+    'Carol': {
+      visits: 2
+    },
+    'Howard': {
+      visits: 3,
+    },
+    'Carrie': {
+      visits: 4
     }
-    //filter the numbers from the array
-    let numberFilter = arr.filter(element => typeof element === 'number');
-    console.log(numberFilter)
-    //if the filtered array contains no numbers, return 0
-    if (numberFilter.length < 1){
-        return 0;
-    }
-    //iterate over the array
-    return numberFilter.reduce ((pre, cur) => cur < pre ? cur : pre);
-}
-  console.log(findSmallestNumberAmongMixedElements(arr))
-// let arr = [1,3,5,5,6,7,2,4,5,9]
-// function numCounter(arr, numToFind) {
-//     //if array is empty, return 0;
-//     if (arr.length < 1){
-//         return 0;
-//     }
-//     //set a counter to track the count of numToFind
-//     let counter = 0;
-//     //iterate over the array
-//     arr.forEach ((element) => {
-//         //increment counter each time an array element matches the numToFind
-//         if (element === numToFind){
-//             counter++
-//         }
-//         //return counter
-        
-//     })
-//     return counter;
-// }
-// console.log(numCounter(arr, 5));
+  };
+  
+  function greetCustomer(firstName) {
+    //declare responses
+    let newCustGreet = `Welcome! Is this your first time?`;
+    let oneVisitGreet = `Welcome back, ${firstName}! We're glad you liked us the first time!`
+    let multiVisitGreet = `Welcome back, ${firstName}! So glad to see you again!`
+    //look up customer firstName in the customerData object;
+      //if the customer doesnt exist
+      if (!customerData[firstName]){
+          //respond
+          return newCustGreet;
+      } else if (customerData[firstName].visits > 1) { 
+          return multiVisitGreet;
+      } else {
+          return oneVisitGreet;
+      }
+  } 
