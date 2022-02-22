@@ -4,6 +4,5 @@ function summation (n) {
          sum = n + summation (n-1);
      }
      return sum;
-}
+    }
 
-console.log(summation(5));

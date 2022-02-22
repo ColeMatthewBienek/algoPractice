@@ -1,8 +1,12 @@
 {
     "configurations": [
+
+
+
+
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/practiceField.js",
+            "program": "${workspaceFolder}/wordBuckets.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -13,7 +17,7 @@
             "type": "pwa-node",
             "name": "Run Current File",
             "request": "launch",
-            "program": "${workspaceFolder}\\practiceField.js"
+            "program": "${workspaceFolder}\\wordBuckets.js"
         }
     ]
 }
