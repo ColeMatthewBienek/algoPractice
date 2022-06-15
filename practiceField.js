@@ -137,34 +137,38 @@
 //     //return the array    
 //   }
 
-var customerData = {
-    'Joe': {
-      visits: 1
-    },
-    'Carol': {
-      visits: 2
-    },
-    'Howard': {
-      visits: 3,
-    },
-    'Carrie': {
-      visits: 4
-    }
-  };
+// var customerData = {
+//     'Joe': {
+//       visits: 1
+//     },
+//     'Carol': {
+//       visits: 2
+//     },
+//     'Howard': {
+//       visits: 3,
+//     },
+//     'Carrie': {
+//       visits: 4
+//     }
+//   };
   
-  function greetCustomer(firstName) {
-    //declare responses
-    let newCustGreet = `Welcome! Is this your first time?`;
-    let oneVisitGreet = `Welcome back, ${firstName}! We're glad you liked us the first time!`
-    let multiVisitGreet = `Welcome back, ${firstName}! So glad to see you again!`
-    //look up customer firstName in the customerData object;
-      //if the customer doesnt exist
-      if (!customerData[firstName]){
-          //respond
-          return newCustGreet;
-      } else if (customerData[firstName].visits > 1) { 
-          return multiVisitGreet;
-      } else {
-          return oneVisitGreet;
-      }
-  } 
+//   function greetCustomer(firstName) {
+//     //declare responses
+//     let newCustGreet = `Welcome! Is this your first time?`;
+//     let oneVisitGreet = `Welcome back, ${firstName}! We're glad you liked us the first time!`
+//     let multiVisitGreet = `Welcome back, ${firstName}! So glad to see you again!`
+//     //look up customer firstName in the customerData object;
+//       //if the customer doesnt exist
+//       if (!customerData[firstName]){
+//           //respond
+//           return newCustGreet;
+//       } else if (customerData[firstName].visits > 1) { 
+//           return multiVisitGreet;
+//       } else {
+//           return oneVisitGreet;
+//       }
+//   } 
+
+
+let str = "tenthcharacter";
+console.log(str[9]);

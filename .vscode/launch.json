@@ -4,9 +4,10 @@
 
 
 
+
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/wordBuckets.js",
+            "program": "${workspaceFolder}/barcodes.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
